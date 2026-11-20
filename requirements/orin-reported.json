@@ -1,0 +1,73 @@
+{
+  "report_received_date_local": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "source_kind": "user_supplied_deployment_report",
+  "source_result": "../evidence/orin-deployment-report.json",
+  "independently_verified_in_this_repository_on_orin": false,
+  "hardware": {
+    "gpu": "Jetson AGX Orin",
+    "nominal_memory_gb": 64,
+    "compute_capability": [
+      8,
+      7
+    ]
+  },
+  "l4t": "36.4.7",
+  "jetpack_series": "6",
+  "jetpack_exact_version": null,
+  "conda_environment": "laya-orin-fp16",
+  "python": "3.12.12",
+  "torch": {
+    "version": "2.9.0",
+    "cuda_build": "12.6",
+    "cudnn": "9.17",
+    "cxx11_abi": true,
+    "wheel_sha256": null
+  },
+  "laya": "0.4.7",
+  "transformers": "4.57.6",
+  "fa2": {
+    "source": "Orin-local vLLM extension",
+    "vllm_version": "0.11.1rc6.dev52+g6c317a656.d20251103.cu126",
+    "extension": "_vllm_fa2_C.abi3.so",
+    "extension_sha256": null,
+    "global_layers_per_round": 8,
+    "sliding_layers_per_round": 14,
+    "causal": false,
+    "qkv_device": "cuda:0",
+    "qkv_dtype": "float16",
+    "head_dimension": 64
+  },
+  "model": {
+    "repository": "convaiinnovations/laya-multilingual",
+    "revision": "1720e3e3357cfe1e281542e223f8273b0890ca34",
+    "weights_sha256_matches_revision_reported": true,
+    "full_six_file_verification_reported": false
+  },
+  "octop": {
+    "version": "1.0.3b1",
+    "model": "multilingual",
+    "port": 58190,
+    "endpoint_path": "/v1/systemone",
+    "authentication": "Bearer",
+    "topology": "Octop container on a different host"
+  },
+  "service": {
+    "unit": "laya-orin.service",
+    "scope": "user",
+    "running_at_report_time": true,
+    "autostart_configured_reported": true,
+    "controlled_service_restart_retest_reported": true,
+    "whole_device_reboot_test_reported": false
+  },
+  "omitted_by_request": [
+    "device addresses",
+    "usernames",
+    "private paths",
+    "business agent name",
+    "session ID",
+    "correlation marker",
+    "colleague computer files and links",
+    "credentials"
+  ]
+}

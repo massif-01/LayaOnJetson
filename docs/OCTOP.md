@@ -2,7 +2,7 @@
 
 ## 现场信息
 
-先记录 Octop 版本、octop-harness 版本、启动方式和网络空间。当前仓库只保存通用操作流程，Thor 的历史测量来自独立 HTTP 服务。另一台 Orin 的成功接入由用户确认，详细回执后补。
+先记录 Octop 版本、octop-harness 版本、启动方式和网络空间。Thor 的历史测量来自独立 HTTP 服务。用户提供的 Orin 回执报告，Octop 1.0.3b1 已通过独立服务调用、决策测试、新会话实际评分、工具调用及 Laya 受控重启后的复测，见 [Orin 记录](ORIN.md#octop-接入结果)。
 
 Octop 的决策客户端通过 HTTP 请求配置的 endpoint。目标为本服务的 `/v1/systemone`，模型填 `multilingual`。内置 Laya 安装器的已查版本默认 CPU，独立 GPU 服务使用本页的 endpoint 配置。[Octop Laya 安装实现](https://github.com/TencentCloud/Octop/blob/4022e24e/src/octop/infra/agents/settings/laya_runtime.py) · [Harness HTTP 客户端](https://github.com/TencentCloud/octop-harness/blob/65b54561f39327b8d6a144a377b00230002cebad/src/octop_harness/decision/client.py)
 

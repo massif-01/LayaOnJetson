@@ -1,5 +1,7 @@
 # Thor 实测记录
 
+本页保留 Thor 原始测试。Orin 的单独输入、采样次数和用户提供的结果见 [ORIN.md](ORIN.md#http-性能)，两组耗时用于各自后端比较。
+
 ## 运行条件
 
 2026-11-13 北京时间。JetPack 7.1、Thor SM110、CUDA 13.0、自定义 PyTorch 2.11.0、Laya 0.4.7、transformers 4.57.6。模型 revision 及文件散列见 requirements/model.json。

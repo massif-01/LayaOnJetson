@@ -1,0 +1,163 @@
+{
+  "source_kind": "user_supplied_deployment_report",
+  "report_received_date_local": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "deployment_date": null,
+  "measurement_date": null,
+  "raw_files_included": false,
+  "colleague_computer_files_and_links_excluded_by_user_request": true,
+  "independent_device_retest_during_documentation": false,
+  "environment_manifest": "../requirements/orin-reported.json",
+  "benchmark": {
+    "concurrency": 1,
+    "warmup_per_group": 5,
+    "measured_per_group": 20,
+    "measured_requests_per_backend": 160,
+    "failures_per_backend": 0,
+    "truncated_requests_per_backend": 0,
+    "cpu_fallback_count_per_backend": 0,
+    "device_at_end_per_backend": "cuda",
+    "input_payloads_included": false,
+    "power_mode_and_clock_settings": null,
+    "groups": [
+      {
+        "state_tokens": 21,
+        "noul_count": 1,
+        "sdpa_p50_ms": 62.94,
+        "sdpa_p95_ms": 65.3,
+        "fa2_p50_ms": 74.4,
+        "fa2_p95_ms": 75.08,
+        "max_absolute_probability_delta": 0
+      },
+      {
+        "state_tokens": 21,
+        "noul_count": 5,
+        "sdpa_p50_ms": 65.95,
+        "sdpa_p95_ms": 67.35,
+        "fa2_p50_ms": 77.51,
+        "fa2_p95_ms": 78.56,
+        "max_absolute_probability_delta": 0.0005
+      },
+      {
+        "state_tokens": 21,
+        "noul_count": 10,
+        "sdpa_p50_ms": 69.34,
+        "sdpa_p95_ms": 70.63,
+        "fa2_p50_ms": 81.19,
+        "fa2_p95_ms": 82.59,
+        "max_absolute_probability_delta": 0.0009
+      },
+      {
+        "state_tokens": 21,
+        "noul_count": 20,
+        "sdpa_p50_ms": 75.12,
+        "sdpa_p95_ms": 76.48,
+        "fa2_p50_ms": 87.01,
+        "fa2_p95_ms": 88.25,
+        "max_absolute_probability_delta": 0.0008
+      },
+      {
+        "state_tokens": 754,
+        "noul_count": 1,
+        "sdpa_p50_ms": 68.88,
+        "sdpa_p95_ms": 70.25,
+        "fa2_p50_ms": 76.3,
+        "fa2_p95_ms": 77.27,
+        "max_absolute_probability_delta": 0
+      },
+      {
+        "state_tokens": 754,
+        "noul_count": 5,
+        "sdpa_p50_ms": 169.11,
+        "sdpa_p95_ms": 170.48,
+        "fa2_p50_ms": 147.21,
+        "fa2_p95_ms": 148.6,
+        "max_absolute_probability_delta": 0.0075
+      },
+      {
+        "state_tokens": 754,
+        "noul_count": 10,
+        "sdpa_p50_ms": 299.62,
+        "sdpa_p95_ms": 301.27,
+        "fa2_p50_ms": 258.64,
+        "fa2_p95_ms": 260.13,
+        "max_absolute_probability_delta": 0.0076
+      },
+      {
+        "state_tokens": 754,
+        "noul_count": 20,
+        "sdpa_p50_ms": 567.8,
+        "sdpa_p95_ms": 568.32,
+        "fa2_p50_ms": 488.59,
+        "fa2_p95_ms": 489.49,
+        "max_absolute_probability_delta": 0.0081
+      }
+    ],
+    "cuda_memory_mib": {
+      "sdpa": {
+        "peak_allocated": 1873,
+        "peak_reserved": 2342
+      },
+      "fa2": {
+        "peak_allocated": 1817,
+        "peak_reserved": 2178
+      }
+    }
+  },
+  "numerical_checks": {
+    "varlen_global_vs_explicit_fp32_mask_reference": {
+      "max_absolute_error": 0.000537
+    },
+    "varlen_sliding_vs_explicit_fp32_mask_reference": {
+      "max_absolute_error": 0.000537
+    },
+    "encoder_cross_fp16_backends": {
+      "minimum_cosine_similarity": 0.996285,
+      "extra_check_threshold": 0.999,
+      "extra_check_passed": false,
+      "root_cause_provided": false
+    },
+    "noul_probabilities": {
+      "repeated_pairs": 1440,
+      "mean_absolute_delta": 0.00058,
+      "maximum_absolute_delta": 0.0081,
+      "decision_threshold": 0.6,
+      "threshold_crossings": 0,
+      "labeled_task_accuracy_test_provided": false
+    }
+  },
+  "octop_acceptance": {
+    "independent_inference_reported_pass": true,
+    "decision_test_reported_pass": true,
+    "controlled_service_restart_retest_reported_pass": true,
+    "decision_test_after_restart": {
+      "ok": true,
+      "probability": 0.9139
+    },
+    "new_session_scoring_reported_pass": true,
+    "reported_noul_count": 20,
+    "http_success_status": 200,
+    "http_request_count": null,
+    "decision_event_reported": true,
+    "tool_called": "current_time",
+    "tool_success_reported": true,
+    "agent_turn_completed_reported": true
+  },
+  "environment_install_note": {
+    "conda_clone_reported": true,
+    "libstdcxx_cache_size_mismatch_reported": true,
+    "transaction_completed_reported": true,
+    "pip_check_passed_reported": true,
+    "cuda_operation_passed_reported": true,
+    "inference_passed_reported": true
+  },
+  "limitations": [
+    "User-provided report only; original files deliberately excluded",
+    "No fresh on-device validation of repository scripts on Orin",
+    "Exact FA2 loader implementation and binary hashes not supplied in the report body",
+    "Encoder cosine similarity did not meet the extra 0.999 check threshold",
+    "Raw benchmark payloads are absent and differ in token count from this repository fixture",
+    "Orin TensorRT results were not supplied",
+    "Whole-device reboot validation was not supplied"
+  ]
+}

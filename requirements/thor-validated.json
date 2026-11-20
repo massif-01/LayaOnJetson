@@ -1,0 +1,64 @@
+{
+  "measurement_date_local": "2026-11-13",
+  "timezone": "Asia/Shanghai",
+  "hardware": {
+    "gpu": "NVIDIA Thor",
+    "architecture": "aarch64",
+    "compute_capability": [
+      11,
+      0
+    ]
+  },
+  "jetpack": "7.1",
+  "l4t": "38.4",
+  "cuda": "13.0",
+  "python": "3.12.15",
+  "laya": "0.4.7",
+  "transformers": "4.57.6",
+  "torch": {
+    "version": "2.11.0",
+    "build": "custom ARM64 CUDA 13.0",
+    "wheel_filename": "torch-2.11.0-cp312-cp312-linux_aarch64.whl",
+    "sha256": "7f0bbb9eabdda95b22962a390713d0eb7cd0bc4f136bd937b0b05a2f01c19385",
+    "cxx11_abi": true,
+    "cuda_arches": [
+      "sm_110"
+    ]
+  },
+  "tensorrt": "10.13.3.9",
+  "onnx": "1.23.2",
+  "fa2": {
+    "source": "vLLM bundled extension",
+    "vllm_version": "0.21.1rc1.dev104+g301d98647",
+    "extension": "_vllm_fa2_C.abi3.so",
+    "cubin_architecture": "sm_80",
+    "ptx_architecture": "sm_80",
+    "global_layers": 8,
+    "sliding_layers": 14,
+    "head_dimension": 64,
+    "sha256": {
+      "flash_attn_interface.py": "49a51585d4eec74ee752ead1ade10d077b90c6c56eac6b8a4af6850a194a5b2a",
+      "_vllm_fa2_C.abi3.so": "7bbdfbd823ba1258400b49ee7d67e167304741586294f78b7e6aac98a9c2056d"
+    }
+  },
+  "laya_source_sha256": {
+    "agent.py": "d98f8b02df03349cb4e590e02daa1ddbd58e1c23c9fed69ed0ccdb084c5915ce",
+    "common.py": "956f92ff8d83ed0d9b1b658129591ebdfe618ef94b4c90fb9b24c8c71af1775a",
+    "serve.py": "9ba31dcb9efa017f245e0b25f3214c43b6f00e3f803998dc2762ef774902693a"
+  },
+  "trt_profile": {
+    "batch_min_opt_max": [
+      1,
+      5,
+      5
+    ],
+    "sequence_min_opt_max": [
+      8,
+      512,
+      1024
+    ],
+    "markers": 2,
+    "onnx_opset": 18,
+    "precision_policy": "TensorRT 10 --fp16 mixed precision"
+  }
+}

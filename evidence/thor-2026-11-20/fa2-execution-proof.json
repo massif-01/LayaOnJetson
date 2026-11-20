@@ -1,0 +1,28 @@
+{
+  "backend": "fa2",
+  "gpu": "NVIDIA Thor",
+  "compute_capability": [
+    11,
+    0
+  ],
+  "device": "cuda",
+  "weight_dtype": "torch.float32",
+  "compute_policy": "torch.float16",
+  "encoder_attention": "jetson_fa2",
+  "fa2_calls": {
+    "global": 8,
+    "sliding": 14
+  },
+  "trt_calls": 0,
+  "cpu_fallback_count": 0,
+  "torch": "2.11.0",
+  "torch_cuda": "13.0",
+  "torch_cxx11_abi": true,
+  "laya": "0.4.7",
+  "transformers": "4.57.6",
+  "warmup_operator_events": {
+    "_vllm_fa2_C::varlen_fwd": 22,
+    "aten::scaled_dot_product_attention": 2,
+    "aten::_scaled_dot_product_efficient_attention": 2
+  }
+}

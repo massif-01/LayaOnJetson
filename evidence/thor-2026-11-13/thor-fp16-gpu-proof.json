@@ -1,0 +1,94 @@
+{
+  "gpu": "NVIDIA Thor",
+  "compute_capability": [
+    11,
+    0
+  ],
+  "torch_cuda": "13.0",
+  "torch_arches": [
+    "sm_110"
+  ],
+  "torch_cxx11_abi": true,
+  "torch": "2.11.0",
+  "laya": "0.4.7",
+  "transformers": "4.57.6",
+  "weight_dtype": "torch.float32",
+  "backend": "eager",
+  "encoder_attention": "sdpa",
+  "sdpa_calls": [
+    {
+      "device": "cuda",
+      "qkv_dtype": "torch.float16",
+      "count": 24
+    }
+  ],
+  "sdpa_operator_events": {
+    "aten::_scaled_dot_product_efficient_attention": 24
+  },
+  "cpu_fallback_count": 0,
+  "result": {
+    "model": "laya-rl-agent",
+    "answers": {
+      "skill:录音检索": {
+        "type": "noul",
+        "noul": 0.9129,
+        "confidence": 0.9129,
+        "answer_confidence": 0.9129,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "skill:会议纪要": {
+        "type": "noul",
+        "noul": 0.1567,
+        "confidence": 0.8433,
+        "answer_confidence": 0.8433,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "skill:设备管理": {
+        "type": "noul",
+        "noul": 0.951,
+        "confidence": 0.951,
+        "answer_confidence": 0.951,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "skill:知识库维护": {
+        "type": "noul",
+        "noul": 0.3883,
+        "confidence": 0.6117,
+        "answer_confidence": 0.6117,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "skill:邮件撰写": {
+        "type": "noul",
+        "noul": 0.1451,
+        "confidence": 0.8549,
+        "answer_confidence": 0.8549,
+        "action": {
+          "act_probability": 1.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 225,
+      "output_tokens": 0,
+      "state_tokens": 7,
+      "state_tokens_dropped": 0,
+      "truncated": false,
+      "truncated_questions": []
+    },
+    "routing": {
+      "model": "multilingual",
+      "repo": "<local-model-directory>",
+      "reason": "explicit model='multilingual'",
+      "detection": null,
+      "workflow": null
+    }
+  }
+}

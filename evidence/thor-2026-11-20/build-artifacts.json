@@ -1,0 +1,9 @@
+{
+  "onnx_sha256": "bda54cef883d45757c21159256f90749ef0ddd401362637e9ff3040118a8476e",
+  "engine_sha256": "13c40af407ed51b39ae185fb637ae66f6b358d565e32fd78f5165c943ce737ed",
+  "engine_bytes": 649206364,
+  "fa2_sha256": {
+    "flash_attn_interface.py": "49a51585d4eec74ee752ead1ade10d077b90c6c56eac6b8a4af6850a194a5b2a",
+    "_vllm_fa2_C.abi3.so": "7bbdfbd823ba1258400b49ee7d67e167304741586294f78b7e6aac98a9c2056d"
+  }
+}

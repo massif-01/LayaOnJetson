@@ -1,0 +1,90 @@
+{
+  "validation_date_local": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "hardware": "NVIDIA Thor SM110",
+  "new_environment_python": "3.12.16",
+  "model_verification": "All six fixed-checkpoint SHA-256 hashes matched; existing checkpoint reused",
+  "checks": {
+    "sdpa": {
+      "environment": "new dedicated PyTorch environment",
+      "execution_proof": "thor-2026-11-20/sdpa-execution-proof.json",
+      "http_requests": 28,
+      "measured_requests": 20,
+      "all_answers_complete": true,
+      "all_probabilities_finite_in_range": true,
+      "cpu_fallback_count": 0,
+      "status_without_key_http_status": 401,
+      "status_with_key_http_status": 200
+    },
+    "fa2": {
+      "environment": "new dedicated PyTorch environment",
+      "execution_proof": "thor-2026-11-20/fa2-execution-proof.json",
+      "http_requests": 28,
+      "measured_requests": 20,
+      "all_answers_complete": true,
+      "all_probabilities_finite_in_range": true,
+      "cpu_fallback_count": 0,
+      "status_without_key_http_status": 401,
+      "status_with_key_http_status": 200
+    },
+    "trt": {
+      "environment": "existing dedicated TensorRT environment",
+      "execution_proof": "thor-2026-11-20/trt-execution-proof.json",
+      "http_requests": 28,
+      "measured_requests": 20,
+      "all_answers_complete": true,
+      "all_probabilities_finite_in_range": true,
+      "cpu_fallback_count": 0,
+      "status_without_key_http_status": 401,
+      "status_with_key_http_status": 200
+    }
+  },
+  "probability_comparison": {
+    "fa2": {
+      "max_absolute_probability_delta_vs_sdpa": 0.0014,
+      "threshold": 0.6,
+      "threshold_flips": 0,
+      "repeated_probability_comparisons": 60,
+      "unique_decisions": 12
+    },
+    "trt": {
+      "max_absolute_probability_delta_vs_sdpa": 0.0306,
+      "threshold": 0.6,
+      "threshold_flips": 0,
+      "repeated_probability_comparisons": 60,
+      "unique_decisions": 12
+    }
+  },
+  "tensorrt": {
+    "onnx_export": "passed, opset 18",
+    "engine_build": "passed, local TensorRT 10.13.3.9 mixed FP16",
+    "profile_corners": "thor-2026-11-20/trt-profile-corners.json",
+    "profile_rejection_and_recovery": "thor-2026-11-20/trt-negative.json"
+  },
+  "existing_services": {
+    "generation_health_before_after": "HTTP success",
+    "original_sdpa_health_after": "CUDA, zero CPU fallbacks",
+    "temporary_validation_services": "stopped"
+  },
+  "scope_notes": [
+    "Short and long synthetic Noul requests, 1 and 5 questions, 2 warm-up and 5 measured requests per group",
+    "SDPA and FA2 smoke checks overlapped TensorRT engine compilation; these timings are not a controlled performance comparison",
+    "Standalone flash_attn entry point was not validated; FA2 checks used the vLLM extension identified by SHA-256",
+    "Octop configuration and real Agent integration were not changed or validated on Thor",
+    "Orin details await the separate deployment receipt",
+    "New TensorRT engine produced slightly different probabilities from the historical engine; original results remain unchanged"
+  ],
+  "script_sha256": {
+    "scripts/bench_noul.py": "2475a9cbf6fbc47b960fbd17b01601e62cea219aef570777423d4799405ea9dd",
+    "scripts/build_trt.sh": "85b563d25c20816d5c2e3830f6789fb97c9a3537a456aa1724ac19c645fdc067",
+    "scripts/check_gpu.py": "00a63b84b4dfd127e86e6be9ebe2969e78e5154fb121cbc3b6876e16d8ab481e",
+    "scripts/create_env.sh": "8f8a59df07c1c839d8ccaae639057e14a07af1b9858b760d2467f9e1e51be139",
+    "scripts/download_model.py": "aa57bc270101b340592e06550e101a6a951e918d1690cd2e8e7c25de1a30d962",
+    "scripts/export_trt.py": "e87e1bbeb6e85bf1fd65ca5da5e42694102f543a8eae512f98fbb8c0b2a5ea5b",
+    "scripts/fa2_backend.py": "1b1b16bc273a2eccfd2b7c8f2c490bc8c96dffa8c190054ca4e459f683b2148c",
+    "scripts/runtime.py": "e1368a2e81fd22b8d282dfd1ebe378884272a82fb9614e71736e1aec14a269f0",
+    "scripts/serve.py": "1e2695398b19f0ec220d701a8c196c877a9ac9820b8c4fdde7bc8074b5fab637",
+    "scripts/summarize.py": "48b15b6e272762fe2aa959006d5bb51b7ae50bf812b8b125a604e6c71c81f4b9",
+    "scripts/trt_backend.py": "426594ae726530bd6b7c3c929b54ea7d34c4848b2fd8eea979cad69ed454f912"
+  }
+}

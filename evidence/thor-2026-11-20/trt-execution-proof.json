@@ -1,0 +1,21 @@
+{
+  "backend": "trt",
+  "gpu": "NVIDIA Thor",
+  "compute_capability": [
+    11,
+    0
+  ],
+  "device": "cuda",
+  "weight_dtype": "torch.float32",
+  "compute_policy": "TensorRT mixed FP16",
+  "encoder_attention": "sdpa",
+  "fa2_calls": {},
+  "trt_calls": 1,
+  "cpu_fallback_count": 0,
+  "torch": "2.11.0",
+  "torch_cuda": "13.0",
+  "torch_cxx11_abi": true,
+  "laya": "0.4.7",
+  "transformers": "4.57.6",
+  "warmup_operator_events": {}
+}
